@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    background-color: orange;
+}
+
+.container__wide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* <----HEADER-------------------------------------> */
+
+.header {
+    width: 270px;
+    height: 50px;
+    background-color: #cdcccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 2px 2px 0 2px grey,
+                2px -2px 0 2px white;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    box-shadow: -2px -2px 1px 0 white inset,
+                 2px 2px 1px 0 grey inset;
+}
+
+.header__mines-counter {
+    width: 39px;
+    height: 24px;
+    display: flex;
+}
+
+.header__counter__number {
+    width: 13px;
+    height: 24px;
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+}
+
+.header__smile {
+    width: 27px;
+    height: 27px;
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: 0 60px;
+}
+
+.header__smile.clicked {
+    background-position: -27px 60px;
+}
+
+.header__smile.died {
+    background-position: 31px 60px;
+}
+
+.header__smile.cool {
+    background-position: 59px 60px;
+}
+
+.header__smile.worried {
+    background-position: 85px 60px;
+}
+
+.header__timer {
+    width: 39px;
+    height: 24px;
+    display: flex;
+}
+
+.header__timer__number {
+    width: 14px;
+    height: 24px;
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+}
+
+.header__timer__number.num0,
+.header__counter__number.num0 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: 13px 0;
+}
+
+.header__timer__number.num1,
+.header__counter__number.num1 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: 0 0;
+}
+
+.header__timer__number.num2,
+.header__counter__number.num2 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -14px 0;
+}
+
+.header__timer__number.num3,
+.header__counter__number.num3 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -28px 0;
+}
+
+.header__timer__number.num4,
+.header__counter__number.num4 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -42px 0;
+}
+
+.header__timer__number.num5,
+.header__counter__number.num5 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -56px 0;
+}
+
+.header__timer__number.num6,
+.header__counter__number.num6 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -70px 0;
+}
+
+.header__timer__number.num7,
+.header__counter__number.num7 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -84px 0;
+}
+
+.header__timer__number.num8,
+.header__counter__number.num8 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -98px 0;
+}
+
+.header__timer__number.num9,
+.header__counter__number.num9 {
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: -112px 0;
+}
+
+
+/* <----MAIN-------------------------------------> */
+
+.main {
+    width: 270px;
+    height: 270px;
+    background-color: #cdcccc;
+    padding: 15px;
+    box-shadow: 2px 2px 0 2px grey;
+    position: relative;
+}
+
+.main__mines {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 1px 0 grey,
+                -2px -2px 1px 0 grey,
+                -2px 2px 1px 0 white,
+                2px 2px 1px 0 white;
+}
+
+.ceil {
+    width: 15px;
+    height: 15px;
+    background-image: url('./images/minesweeper-sprites_9TPZzv3.png');
+    background-position: 0 116px;
+}
+
+.ceil.mine {
+    background-position: 54px 116px;
+}
+
+.ceil.flag {
+    background-position: 245px 116px;
+}
+
+.ceil.empty {
+    background-position: 122px 116px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.ceil.question-pressed {
+    background-position: 71px 116px;
+}
+
+.ceil.question {
+    background-position: 88px 116px;
+}
+
+.ceil.exploded {
+    background-position: 36px 116px;
+}
+
+.ceil.mine-crossed {
+    background-position: 159px 116px;
+}
+
+.ceil.one {
+    background-position: 0 99.7px;
+}
+
+.ceil.two {
+    background-position: -17px 99.7px;
+}
+
+.ceil.three {
+    background-position: -34px 99.7px;
+}
+
+.ceil.four {
+    background-position: -51px 99.7px;
+}
+
+.ceil.five {
+    background-position: -68px 99.7px;
+}
+
+.ceil.six {
+    background-position: 54px 99.7px;
+}
+
+.ceil.seven {
+    background-position: -102px 99.7px;
+}
+
+.ceil.eight {
+    background-position: -120px 99.7px;
+}
+
+.cover {
+    width: 270px;
+    height: 270px;
+    background-color: transaprent;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
