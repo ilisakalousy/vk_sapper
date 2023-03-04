@@ -121,6 +121,8 @@ refreshSmile.addEventListener('click', function() {
     gameEnding.style.zIndex = -1;
     secondMinesTab.className = `header__counter__number counter__second num4`;
     thirdMinesTab.className = `header__counter__number counter__third num0`;
+    noMoreFlags = 40;
+    flagsCounter = 0;
 });
 
 // Перезагрузка игры
@@ -173,8 +175,7 @@ function startGame(WIDTH, HEIGHT, MINES_COUNT) {
                         noMoreFlags--;
                         minesCounter();
                     };
-                }
-                console.log(noMoreFlags)
+                };
         });
     };
 
