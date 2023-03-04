@@ -119,6 +119,8 @@ refreshSmile.addEventListener('click', function() {
     counterForTimer = 0;
     secondMines = 0;
     gameEnding.style.zIndex = -1;
+    secondMinesTab.className = `header__counter__number counter__second num4`;
+    thirdMinesTab.className = `header__counter__number counter__third num0`;
 });
 
 // Перезагрузка игры
@@ -155,22 +157,24 @@ function startGame(WIDTH, HEIGHT, MINES_COUNT) {
         // Правой кнопкой меняем флаг-вопрос-пустая
         ceils[c].addEventListener('contextmenu', (evt) => {
             evt.preventDefault();
-                if (evt.target.classList.contains('flag')) {
-                    evt.target.classList.remove('flag');
-                    evt.target.classList.add('question');
+                if (!evt.target.disabled === true) {
+                    if (evt.target.classList.contains('flag')) {
+                        evt.target.classList.remove('flag');
+                        evt.target.classList.add('question');
+                    }
+                    else if (evt.target.classList.contains('question')) {
+                        evt.target.classList.remove('question');
+                        evt.target.classList.remove('flag');
+                        noMoreFlags++;
+                        minesCounter();
+                    }
+                    else if (noMoreFlags > 0) {
+                        evt.target.classList.add('flag');
+                        noMoreFlags--;
+                        minesCounter();
+                    };
                 }
-                else if (evt.target.classList.contains('question')) {
-                    evt.target.classList.remove('question');
-                    evt.target.classList.remove('flag');
-                    flagsCounter--;
-                    minesCounter();
-                }
-                else {
-                    evt.target.classList.add('flag');
-                    flagsCounter++;
-                    minesCounter();
-                };
-            
+                console.log(noMoreFlags)
         });
     };
 
