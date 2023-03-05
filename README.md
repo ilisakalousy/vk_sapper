@@ -1,4 +1,4 @@
-# vk_sapper
+# vk_sapper / Stesikov Ilya
 
 Для запуска игры необходимо скачать репозиторий и открыть файл index.html в браузере
 
